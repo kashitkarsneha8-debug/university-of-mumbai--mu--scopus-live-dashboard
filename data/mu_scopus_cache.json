@@ -1,0 +1,1912 @@
+{
+  "timestamp": 1788262380.772434,
+  "last_updated": "2026-09-01T17:03:00.772433",
+  "cache_ttl_seconds": 3600,
+  "total_records": 100,
+  "source": "Scopus Search API (Live Synchronous)",
+  "query": "AF-ID(60028245) OR AFFIL({University of Mumbai}) OR AFFIL({University of Bombay}) OR AFFIL({Mumbai University}) OR AFFIL({MU Mumbai})",
+  "data": [
+    {
+      "title": "The m-polar fuzzy TOPSIS hybrid method for manufacturing decisions",
+      "authors": "Jagtap M.",
+      "primary_author": "Jagtap M.",
+      "department": "Department of Chemistry",
+      "journal": "Scientific Reports",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 7.5,
+      "sjr": 1.15,
+      "quartile": "Q1",
+      "doi": "10.1038/s41598-025-34591-2",
+      "scopus_id": "105029051173",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Assessing Data Normalization Effects on Electric Vehicle and Tourist Destination Selection: An m-Polar Fuzzy PROMETHEE Perspective",
+      "authors": "Jagtap M.",
+      "primary_author": "Jagtap M.",
+      "department": "Department of Chemistry",
+      "journal": "International Journal of Computational Intelligence Systems",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s44196-025-01132-8",
+      "scopus_id": "105029557755",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Optimized duo directed LSTM for efficient object detection on resource constrained edge devices",
+      "authors": "More S.S.",
+      "primary_author": "More S.S.",
+      "department": "Department of Information Technology",
+      "journal": "Discover Internet of Things",
+      "year": 2026,
+      "citations": 1,
+      "citescore": 3.1,
+      "sjr": 0.56,
+      "quartile": "Q3",
+      "doi": "10.1007/s43926-026-00318-6",
+      "scopus_id": "105039411622",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Metabolic signatures of triple-negative breast cancer",
+      "authors": "Pusalkar G.",
+      "primary_author": "Pusalkar G.",
+      "department": "Department of Chemistry",
+      "journal": "Molecular Biology Reports",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s11033-026-12292-x",
+      "scopus_id": "105044883874",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "On the role of dcm and vsr in Escherichia coli adaptive mutation",
+      "authors": "Minda R.",
+      "primary_author": "Minda R.",
+      "department": "Department of Chemistry",
+      "journal": "Molecular Genetics and Genomics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s00438-025-02320-z",
+      "scopus_id": "105024668742",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "R5 and R7 positions on fluoroquinolone scaffolds drive F-actin filament disruption",
+      "authors": "Gupta R.J.",
+      "primary_author": "Gupta R.J.",
+      "department": "Department of Chemistry",
+      "journal": "Scientific Reports",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 7.5,
+      "sjr": 1.15,
+      "quartile": "Q1",
+      "doi": "10.1038/s41598-026-36089-x",
+      "scopus_id": "105033806005",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Dental disease among adults with and without HIV in the MACS/WIHS Combined Cohort Study (MWCCS)",
+      "authors": "Ramirez C.",
+      "primary_author": "Ramirez C.",
+      "department": "Department of Chemistry",
+      "journal": "BMC Oral Health",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 4.5,
+      "sjr": 0.72,
+      "quartile": "Q2",
+      "doi": "10.1186/s12903-026-08822-5",
+      "scopus_id": "105047770077",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "United States"
+      ]
+    },
+    {
+      "title": "The antibacterial activity of silver nanoparticles against pathogenic bacteria is dependent on their size, shape, and surface properties",
+      "authors": "Mishra M.",
+      "primary_author": "Mishra M.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Microbial Pathogenesis",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.micpath.2026.108789",
+      "scopus_id": "105047855056",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Structure, thermal stabilities and optical properties of varying hydrogen bond stabilized trimethylammonium lanthanide double selenates: [(CH3)3NH][Ln(H2O)4(SeO4)2], (Ln = Sm, Gd, Tb, Dy)",
+      "authors": "Divekar S.K.",
+      "primary_author": "Divekar S.K.",
+      "department": "Department of Physics",
+      "journal": "Journal of Solid State Chemistry",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.jssc.2026.126254",
+      "scopus_id": "105046856108",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Biogenic carbon integrated Ni–Co–Mo transition metal composites for next-generation supercapacitors",
+      "authors": "Thaker A.",
+      "primary_author": "Thaker A.",
+      "department": "Department of Physics",
+      "journal": "Journal of Physics and Chemistry of Solids",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.jpcs.2026.113890",
+      "scopus_id": "105040773275",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Electronic and energy conversion properties of lead-free Cs2LiAX6 (A = As, Ga) halide double perovskites: A first-principles study",
+      "authors": "Rangar K.",
+      "primary_author": "Rangar K.",
+      "department": "Department of Physics",
+      "journal": "Physica B Condensed Matter",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.physb.2026.419208",
+      "scopus_id": "105047555883",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Correlating lattice distortion and thermal spin transition in a mixed spin crossover complex [FexZn1−x(phen)2(NCS)2] by neutron diffraction and magnetic study",
+      "authors": "Gorai M.",
+      "primary_author": "Gorai M.",
+      "department": "Department of Physics",
+      "journal": "Physica B Condensed Matter",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.physb.2026.419162",
+      "scopus_id": "105046595876",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Machine Learning-based Landslide Susceptibility Modeling in the Dibang Valley, NE India",
+      "authors": "Mihu S.",
+      "primary_author": "Mihu S.",
+      "department": "Department of Computer Science",
+      "journal": "Earth Systems and Environment",
+      "year": 2026,
+      "citations": 4,
+      "citescore": 7.8,
+      "sjr": 1.22,
+      "quartile": "Q1",
+      "doi": "10.1007/s41748-026-01036-3",
+      "scopus_id": "105031261391",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "TiO2[jls-end-space/]/Al2[jls-end-space/]O3 bi-layer gate dielectric-based H-terminated diamond MOSFET: Improved mobility by mitigation of remote Coulomb scattering",
+      "authors": "Sheikh A.H.",
+      "primary_author": "Sheikh A.H.",
+      "department": "Department of Physics",
+      "journal": "Diamond and Related Materials",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.diamond.2026.114012",
+      "scopus_id": "105046011375",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Indian salmon fish-scales based novel triboelectric nanogenerators and its enhanced performance",
+      "authors": "Tirpude M.P.",
+      "primary_author": "Tirpude M.P.",
+      "department": "Department of Physics",
+      "journal": "Sensors and Actuators A Physical",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.sna.2026.117980",
+      "scopus_id": "105039059259",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Structure-directed electrochemical enhancement of hydrothermally grown quaternary NiCoCuZnO electrodes for energy storage applications",
+      "authors": "Gaikwad P.G.",
+      "primary_author": "Gaikwad P.G.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Energy Storage",
+      "year": 2026,
+      "citations": 1,
+      "citescore": 3.1,
+      "sjr": 0.56,
+      "quartile": "Q3",
+      "doi": "10.1016/j.est.2026.123261",
+      "scopus_id": "105042224588",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Development and preclinical investigation of vancomycin loaded oxidized cellulose dressing for management of wounds",
+      "authors": "Mishra V.",
+      "primary_author": "Mishra V.",
+      "department": "Department of Life Sciences",
+      "journal": "International Journal of Biological Macromolecules",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 13.4,
+      "sjr": 1.68,
+      "quartile": "Q1",
+      "doi": "10.1016/j.ijbiomac.2026.153774",
+      "scopus_id": "105047047634",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Design, synthesis, biological evaluation, and in silico studies of thiazole-based alkyl ester derivatives as potential antimicrobial agents",
+      "authors": "Kadam M.B.",
+      "primary_author": "Kadam M.B.",
+      "department": "Department of Chemistry",
+      "journal": "Next Materials",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.nxmate.2026.102774",
+      "scopus_id": "105044458360",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Mechanistic insights into chlorogenic acid encapsulation in HTAB micelles and delivery to protein targets",
+      "authors": "Tinku ",
+      "primary_author": "Tinku ",
+      "department": "Department of Pharmaceutical Sciences",
+      "journal": "Journal of Molecular Liquids",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.molliq.2026.129810",
+      "scopus_id": "105044780276",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "A luminescent zinc-based metal-organic framework for rapid and selective detection of Ag+ ions in aqueous media with radical scavenging property",
+      "authors": "Kudalkar J.N.",
+      "primary_author": "Kudalkar J.N.",
+      "department": "Department of Chemistry",
+      "journal": "Inorganic Chemistry Communications",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.inoche.2026.117148",
+      "scopus_id": "105043386606",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Investigation of charge recombination losses and charge collection efficiency in DPP-DTT:PC70BM based BHJ solar cell from impedance spectroscopy",
+      "authors": "Gupta C.V.",
+      "primary_author": "Gupta C.V.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Chemical Sciences",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s12039-026-02531-w",
+      "scopus_id": "105041834177",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Hierarchical nickel oxide nanoparticles grown on cobalt oxide micro-bricks as battery-type electrode for high-performance hybrid supercapacitors",
+      "authors": "Nishad H.S.",
+      "primary_author": "Nishad H.S.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Nano Trends",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.nwnano.2026.100223",
+      "scopus_id": "105044829121",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Eu3+ doped MgAl2O4 nanophosphors with high purity red emission via solution combustion synthesis",
+      "authors": "Wani M.A.",
+      "primary_author": "Wani M.A.",
+      "department": "Department of Chemistry",
+      "journal": "Materials Research Bulletin",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 8.9,
+      "sjr": 1.15,
+      "quartile": "Q2",
+      "doi": "10.1016/j.materresbull.2026.114178",
+      "scopus_id": "105036847909",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Microbial-derived biopolymers for sustainable food packaging",
+      "authors": "Patel A.",
+      "primary_author": "Patel A.",
+      "department": "Department of Chemistry",
+      "journal": "Energy Nexus",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.nexus.2026.100764",
+      "scopus_id": "105045220926",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "Sweden"
+      ]
+    },
+    {
+      "title": "Ethno-botanical Studies of Wild Edible Plants Used as Vegetables by Tribal and Rural Communities of Seloo Tehsil in the District of Wardha, (Maharashtra) India",
+      "authors": "Patil V.N.",
+      "primary_author": "Patil V.N.",
+      "department": "Department of Life Sciences",
+      "journal": "Ceylon Journal of Science",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.4038/cjs.v55i3.8505",
+      "scopus_id": "105044367436",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Toward a High-Energy Hybrid Supercapacitor Based on Nb2O5/Graphene and P3MT/Graphene Nanocomposites",
+      "authors": "Sivaraman P.",
+      "primary_author": "Sivaraman P.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "ACS Applied Energy Materials",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1021/acsaem.6c00196",
+      "scopus_id": "105048013109",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Anisotropic Proton Heating by Kinetic Instabilities in Corotating Interaction Regions",
+      "authors": "Kumbhar K.",
+      "primary_author": "Kumbhar K.",
+      "department": "Department of Physics",
+      "journal": "Astrophysical Journal",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.3847/1538-4357/ae8e6d",
+      "scopus_id": "105047828074",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Thiazole-linked π-conjugated frameworks synthesized via sequential Pd-catalyzed arylation: synthetic strategy and structure–property correlations",
+      "authors": "Thakur P.P.",
+      "primary_author": "Thakur P.P.",
+      "department": "Department of Chemistry",
+      "journal": "Organic and Biomolecular Chemistry",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1039/d6ob00664g",
+      "scopus_id": "105046314092",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Tuning of ferrimagnetic order and spin compensation in Ho6Fe23-xAlx intermetallic compounds",
+      "authors": "Gupta N.",
+      "primary_author": "Gupta N.",
+      "department": "Department of Physics",
+      "journal": "Journal of Magnetism and Magnetic Materials",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.jmmm.2026.174187",
+      "scopus_id": "105037770536",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Photophysical, Electrochemical, and Theoretical Studies of Pyrido[2,3-b]Quinoxaline-Amines: Structure-Driven Divergence Between AIE and ACQ Behaviors",
+      "authors": "Kapse D.M.",
+      "primary_author": "Kapse D.M.",
+      "department": "Department of Chemistry",
+      "journal": "Chemistryselect",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1002/slct.73980",
+      "scopus_id": "105046223787",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Relatively hyperbolic metric bundles and Cannon-Thurston map",
+      "authors": "Krishna S.",
+      "primary_author": "Krishna S.",
+      "department": "Department of Chemistry",
+      "journal": "Geometriae Dedicata",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s10711-026-01104-y",
+      "scopus_id": "105045642118",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Flower shaped CdS@CeO2 nanocomposite: An efficient photocatalyst for degradation of organic dyes under natural sunlight irradiation",
+      "authors": "Yadav I.D.",
+      "primary_author": "Yadav I.D.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Inorganic Chemistry Communications",
+      "year": 2026,
+      "citations": 1,
+      "citescore": 3.1,
+      "sjr": 0.56,
+      "quartile": "Q3",
+      "doi": "10.1016/j.inoche.2026.116834",
+      "scopus_id": "105038823610",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Plant-Based Strategies for Microplastic Remediation: Opportunities, Mechanisms, and Challenges",
+      "authors": "Nair S.",
+      "primary_author": "Nair S.",
+      "department": "Department of Life Sciences",
+      "journal": "Environmental Quality Management",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1002/tqem.70445",
+      "scopus_id": "105047505439",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Hieroglyph Recognition Using Squeeze and Excite Attention Mechanism",
+      "authors": "Lakdawala H.A.",
+      "primary_author": "Lakdawala H.A.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of the Institution of Engineers India Series B",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s40031-026-01316-6",
+      "scopus_id": "105039844758",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Thermodynamic insights into the partitioning of antiviral drugs in HTAB micelles and their delivery to human serum albumin",
+      "authors": "Agarwal A.",
+      "primary_author": "Agarwal A.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Chemical Thermodynamics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.jct.2026.107679",
+      "scopus_id": "105035411152",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Structural and thermal behaviour of a fluorescent pendant coumarin-grafted polymethacrylate",
+      "authors": "Hirani R.",
+      "primary_author": "Hirani R.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Polymer Research",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s10965-026-05060-9",
+      "scopus_id": "105046464266",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "A Unified Explainable Predictive Analytics Pipeline for Learning Management Systems",
+      "authors": "Pawar M.",
+      "primary_author": "Pawar M.",
+      "department": "Department of Chemistry",
+      "journal": "SN Computer Science",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s42979-026-05239-3",
+      "scopus_id": "105046568225",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "H2S Sensor Based on Sandwich-Type SnO2-CuO-SnO2 Heterojunction",
+      "authors": "Rupnar D.V.",
+      "primary_author": "Rupnar D.V.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Electronic Materials",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s11664-026-12949-0",
+      "scopus_id": "105041151646",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Comparative Electrochemical Study of Tetra-Carboxylate Linked Ni-MOF and Cr-MOF for Supercapacitor Application",
+      "authors": "Katke S.P.",
+      "primary_author": "Katke S.P.",
+      "department": "Department of Chemistry",
+      "journal": "Chemnanomat",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1002/cnma.70338",
+      "scopus_id": "105046010958",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "A validated high-performance thin-layer chromatography method for the concurrent estimation of berberine, gallic acid, ferulic acid, and piperine in Chandraprabha Vati",
+      "authors": "Menon S.A.",
+      "primary_author": "Menon S.A.",
+      "department": "Department of Statistics",
+      "journal": "Journal of Planar Chromatography Modern TLC",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s00764-026-00415-w",
+      "scopus_id": "105046850237",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Phonetic-based enhancement to Devanagari orthography for Konkani",
+      "authors": "Fadte S.",
+      "primary_author": "Fadte S.",
+      "department": "Department of Chemistry",
+      "journal": "SN Social Sciences",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s43545-026-01628-w",
+      "scopus_id": "105047204937",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Magnetically recoverable ZnFe2O4 nanoparticles for visible-light-driven photo-Fenton degradation of textile dyes",
+      "authors": "Bhapkar A.R.",
+      "primary_author": "Bhapkar A.R.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Results in Chemistry",
+      "year": 2026,
+      "citations": 1,
+      "citescore": 3.1,
+      "sjr": 0.56,
+      "quartile": "Q3",
+      "doi": "10.1016/j.rechem.2026.103650",
+      "scopus_id": "105044991922",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Fe-induced structural and electronic modulation in Cu-MOF enabling superior charge storage and oxygen evolution activity",
+      "authors": "Kadam R.R.",
+      "primary_author": "Kadam R.R.",
+      "department": "Department of Physics",
+      "journal": "Journal of Physics and Chemistry of Solids",
+      "year": 2026,
+      "citations": 5,
+      "citescore": 8.5,
+      "sjr": 1.3,
+      "quartile": "Q1",
+      "doi": "10.1016/j.jpcs.2026.113690",
+      "scopus_id": "105034614169",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Impact of shape coexistence on nuclear stability",
+      "authors": "Saxena G.",
+      "primary_author": "Saxena G.",
+      "department": "Department of Physics",
+      "journal": "Physics Letters Section B Nuclear Elementary Particle and High Energy Physics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.physletb.2026.140621",
+      "scopus_id": "105042000423",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "A Novel Framework Using Unsupervised Machine Learning for Aerosol Classification: A Case Study of North Indian AERONET Sites",
+      "authors": "Hole V.",
+      "primary_author": "Hole V.",
+      "department": "Department of Computer Science",
+      "journal": "Journal of the Indian Society of Remote Sensing",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s12524-026-02508-9",
+      "scopus_id": "105042604278",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Evaluation of revised TRS398 dosimetry protocol for pencil beam scanning proton therapy systems",
+      "authors": "Punde R.",
+      "primary_author": "Punde R.",
+      "department": "Department of Physics",
+      "journal": "Biomedical Physics and Engineering Express",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1088/2057-1976/ae83ba",
+      "scopus_id": "105044133119",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "MHD-Test Particle Simulations of Electron Dynamics at GOES 16 and 18 During May and October 2024 Superstorms",
+      "authors": "Patel M.",
+      "primary_author": "Patel M.",
+      "department": "Department of Physics",
+      "journal": "Journal of Geophysical Research Space Physics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1029/2026JA035529",
+      "scopus_id": "105047932817",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "United States"
+      ]
+    },
+    {
+      "title": "Innovations in friction stir welding from fundamentals to future frontiers",
+      "authors": "Terkar R.",
+      "primary_author": "Terkar R.",
+      "department": "Department of Chemistry",
+      "journal": "Aip Conference Proceedings",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1063/5.0328745",
+      "scopus_id": "105046905106",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Resolving the nomenclature and typification of African Hair Sedge—Bulbostylis trabeculata (Abildgaardieae, Cyperaceae) and a new record of its distribution in Asia",
+      "authors": "Madhav N.A.",
+      "primary_author": "Madhav N.A.",
+      "department": "Department of Chemistry",
+      "journal": "Phytotaxa",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.11646/phytotaxa.768.2.3",
+      "scopus_id": "105046403641",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Melting of sodium clusters using machine learned MACE potentials",
+      "authors": "Kumar A.",
+      "primary_author": "Kumar A.",
+      "department": "Department of Chemistry",
+      "journal": "Computational Materials Science",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.commatsci.2026.114886",
+      "scopus_id": "105042898764",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Antidiabetic activity of methanolic extract of Polyalthia longifolia seeds ameliorating the oxidative stress induced in diabetic rats",
+      "authors": "Pawar R.S.",
+      "primary_author": "Pawar R.S.",
+      "department": "Department of Pharmaceutical Sciences",
+      "journal": "Journal of Animal Environment",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70102/AEJ.2026.18.2s.54",
+      "scopus_id": "105047752727",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Machine Learning Models for Predicting Environmental Stress and Disease Risk in Livestock Production Systems",
+      "authors": "Sobti S.",
+      "primary_author": "Sobti S.",
+      "department": "Department of Computer Science",
+      "journal": "Journal of Animal Environment",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70102/AEJ.2026.18.2s.75",
+      "scopus_id": "105047445434",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Multi-Criteria Decision Analysis Using AI for Sustainable Animal Waste Management and Environmental Protection",
+      "authors": "Jadhav K.D.",
+      "primary_author": "Jadhav K.D.",
+      "department": "Department of Environmental Sciences",
+      "journal": "Journal of Animal Environment",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70102/AEJ.2026.18.2s.86",
+      "scopus_id": "105047385950",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Artificial Intelligence-Based Decision Support System for Sustainable Animal Environment Management and Welfare Assessment",
+      "authors": "Bhardwaj N.",
+      "primary_author": "Bhardwaj N.",
+      "department": "Department of Computer Science",
+      "journal": "Journal of Animal Environment",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70102/AEJ.2026.18.2s.74",
+      "scopus_id": "105047208645",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Agroecological Farming Practices for Enhancing Biodiversity Conservation and Ecosystem Resilience",
+      "authors": "Jadhav K.D.",
+      "primary_author": "Jadhav K.D.",
+      "department": "Department of Environmental Sciences",
+      "journal": "Journal of Animal Environment",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70102/AEJ.2026.18.1s.39",
+      "scopus_id": "105045739569",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Localization and delocalization of defect states in 2D polyaramid with carbon and nitrogen vacancies",
+      "authors": "Trivedi R.",
+      "primary_author": "Trivedi R.",
+      "department": "Department of Chemistry",
+      "journal": "Physical Chemistry Chemical Physics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1039/d6cp01825d",
+      "scopus_id": "105043790444",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Vanadium-doped cobalt‑bismuth oxide nanocomposites with enhanced multivalent redox activity for high-performance supercapacitors",
+      "authors": "Shitole S.",
+      "primary_author": "Shitole S.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Journal of Energy Storage",
+      "year": 2026,
+      "citations": 2,
+      "citescore": 3.7,
+      "sjr": 0.62,
+      "quartile": "Q3",
+      "doi": "10.1016/j.est.2026.122496",
+      "scopus_id": "105037078208",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Spatiotemporal Blockchain Networks for AI-driven IoT-Enabled Multi-Layer Urban Energy Optimization in Smart Cities",
+      "authors": "Bodade V.",
+      "primary_author": "Bodade V.",
+      "department": "Department of Computer Science",
+      "journal": "Journal of Circuits Systems and Computers",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1142/S0218126626500416",
+      "scopus_id": "105031750108",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Optimizing Performance of Molecular Communication System using Congestion Control Mechanisms",
+      "authors": "Katkar A.",
+      "primary_author": "Katkar A.",
+      "department": "Department of Chemistry",
+      "journal": "Turkish Journal of Engineering",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.31127/tuje.1894045",
+      "scopus_id": "105046542937",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Dual role of cyclic Diselenide containing coumarin based scaffold supported with DFT/TD-DFT studies: Superoxide sensor and anti-Cancer agent",
+      "authors": "S. Shelar D.",
+      "primary_author": "S. Shelar D.",
+      "department": "Department of Chemistry",
+      "journal": "Spectrochimica Acta Part A Molecular and Biomolecular Spectroscopy",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.saa.2026.127692",
+      "scopus_id": "105032195329",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "Germany",
+        "India"
+      ]
+    },
+    {
+      "title": "Sustainable Hibiscus rosa-sinensis-templated MnO2@TiO2 nanocomposites for the visible-light-driven photocatalytic degradation of hazardous organic dyes",
+      "authors": "Mehta Y.",
+      "primary_author": "Mehta Y.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Rsc Advances",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 6.8,
+      "sjr": 0.85,
+      "quartile": "Q2",
+      "doi": "10.1039/d6ra03027k",
+      "scopus_id": "105043718712",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Molecular design of donor–acceptor driven AIE active blue–red emitters for organic electronics",
+      "authors": "Pandhare R.J.",
+      "primary_author": "Pandhare R.J.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Photochemistry and Photobiology A Chemistry",
+      "year": 2026,
+      "citations": 1,
+      "citescore": 3.1,
+      "sjr": 0.56,
+      "quartile": "Q3",
+      "doi": "10.1016/j.jphotochem.2026.117101",
+      "scopus_id": "105029977696",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Mitigating UV-Triggered Degradation and Yellowing in White Architectural Paints Based on Styrene-Acrylic Emulsion Polymer Matrices Through Covalent Incorporation of a Polymerizable Organic UV Absorber Moiety",
+      "authors": "Patil P.M.",
+      "primary_author": "Patil P.M.",
+      "department": "Department of Chemistry",
+      "journal": "Polymers for Advanced Technologies",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1002/pat.70674",
+      "scopus_id": "105044988272",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Editor s Note…",
+      "authors": "Majumdar A.",
+      "primary_author": "Majumdar A.",
+      "department": "Department of Chemistry",
+      "journal": "Pharma Times",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "",
+      "scopus_id": "105046811199",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Comparative evaluation of surfactant and bile salt micelles mediated delivery of drugs to human serum albumin in aqueous media",
+      "authors": "Syed S.F.",
+      "primary_author": "Syed S.F.",
+      "department": "Department of Pharmaceutical Sciences",
+      "journal": "Journal of Molecular Liquids",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.molliq.2026.129534",
+      "scopus_id": "105034630530",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Exploring the potential of synergistically engineered conducting PPy on ZnFe2O4/CNT/PPy nanocomposite for supercapacitor and uric acid sensor",
+      "authors": "Thali B.G.",
+      "primary_author": "Thali B.G.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Next Materials",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.nxmate.2026.102314",
+      "scopus_id": "105039707522",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Rational functionalization of Bi2O3 nanoparticles on CoFe-layered double hydroxide dandelion nanostructures for ultra-stable hybrid supercapacitor",
+      "authors": "Nishad H.S.",
+      "primary_author": "Nishad H.S.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Materials Letters",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.matlet.2026.140534",
+      "scopus_id": "105033811559",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Synthesis and Characterization of Thiol-Ene Microparticles for Doxycycline Delivery",
+      "authors": "Chapusha C.",
+      "primary_author": "Chapusha C.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Biomedical Materials Research Part B Applied Biomaterials",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1002/jbm.b.70132",
+      "scopus_id": "105045468738",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "United States"
+      ]
+    },
+    {
+      "title": "Incidental detection of sellar spine on a CBCT volume: clinical and radiographic considerations",
+      "authors": "Binnal A.",
+      "primary_author": "Binnal A.",
+      "department": "Department of Chemistry",
+      "journal": "Oral Surgery Oral Medicine Oral Pathology and Oral Radiology",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.oooo.2026.01.030",
+      "scopus_id": "105035113671",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "United States"
+      ]
+    },
+    {
+      "title": "A NICER and AstroSat view of the neutron star low-mass X-ray binary 1A 1246 - 588",
+      "authors": "Poojyam V.",
+      "primary_author": "Poojyam V.",
+      "department": "Department of Physics",
+      "journal": "Journal of High Energy Astrophysics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.jheap.2026.100604",
+      "scopus_id": "105035298037",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "India",
+        "United States"
+      ]
+    },
+    {
+      "title": "A Sensitive and High-Throughput Colorimetric Method for Gold Estimation and In-Situ Microscopic Visualization of Gold Nanoparticles in Human Cancer Cells",
+      "authors": "Patel B.J.",
+      "primary_author": "Patel B.J.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Bionanoscience",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1007/s12668-026-02707-1",
+      "scopus_id": "105044104859",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Recycling of spent Zn-C batteries into solar active Z-scheme ZnO@g-C3N4 photocatalyst for removal of Cr (VI), methyl orange and tetracycline hydrochloride",
+      "authors": "Sindhav B.D.",
+      "primary_author": "Sindhav B.D.",
+      "department": "Department of Chemistry",
+      "journal": "Ceramics International",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1016/j.ceramint.2026.05.334",
+      "scopus_id": "105039658042",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "RAD@home discovery of a bow-and-arrow radio galaxy tracing a ∼560 kpc bow-shock structure in a multihalo environment",
+      "authors": "Hota A.",
+      "primary_author": "Hota A.",
+      "department": "Department of Environmental Sciences",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1093/mnras/stag1033",
+      "scopus_id": "105042467724",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Enhanced Power Quality in Solar PV-Based Unified Active Power Filters using a High-Gain Boost-Luo Converter with Intelligent Control",
+      "authors": "Natarajan K.",
+      "primary_author": "Natarajan K.",
+      "department": "Department of Chemistry",
+      "journal": "Menoufia Journal of Electronic Engineering Research",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.21608/mjeer.2026.399614.1167",
+      "scopus_id": "105046626375",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "GUT MICROBIOME-MEDIATED METABOLISM OF L-DOPA: IMPLICATIONS FOR BIOAVAILABILITY IN PARKINSON’S DISEASE",
+      "authors": "Singh A.K.",
+      "primary_author": "Singh A.K.",
+      "department": "Department of Pharmaceutical Sciences",
+      "journal": "Journal of Experimental Zoology India",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.51470/jez.2026.29.2.1683",
+      "scopus_id": "105045922828",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "SILVER NANOPARTICLE-EMBEDDED HYDROGEL FOR ACCELERATED WOUND HEALING HISTOPATHOLOGICAL AND ANTIMICROBIAL ASSESSMENT IN RATS",
+      "authors": "Gayathri L.",
+      "primary_author": "Gayathri L.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Journal of Experimental Zoology India",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.51470/jez.2026.29.2.1883",
+      "scopus_id": "105045924698",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "MAGNETIC IRON OXIDE NANOPARTICLES FOR HYPERTHERMIA-MEDIATED CANCER THERAPY: THERAPEUTIC OUTCOME IN TUMOR-BEARING MICE",
+      "authors": "Singh S.K.",
+      "primary_author": "Singh S.K.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Journal of Experimental Zoology India",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.51470/jez.2026.29.2.1389",
+      "scopus_id": "105045563235",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "SOLID LIPID NANOPARTICLES OF KETOPROFEN FOR TRANSDERMAL DELIVERY SKIN PERMEATION AND ANALGESIC ACTIVITY IN RABBITS",
+      "authors": "Soundaryashree N.R.",
+      "primary_author": "Soundaryashree N.R.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Journal of Experimental Zoology India",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.51470/jez.2026.29.2.1723",
+      "scopus_id": "105045973698",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "A dual ROS-regulating polydopamine/Bi2S3-CuS nanoplatform for antioxidant activity, photothermal antibacterial therapy, and stimuli-responsive curcumin delivery",
+      "authors": "Farah H.",
+      "primary_author": "Farah H.",
+      "department": "Department of Physics",
+      "journal": "European Physical Journal Plus",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1140/epjp/s13360-026-08078-6",
+      "scopus_id": "105045255264",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "Jordan"
+      ]
+    },
+    {
+      "title": "Bayesian Hierarchical Modelling of Root Canal Morphology in Mandibular First Premolars Across 21 Countries",
+      "authors": "Pertek Hatipoğlu F.",
+      "primary_author": "Pertek Hatipoğlu F.",
+      "department": "Department of Statistics",
+      "journal": "International Endodontic Journal",
+      "year": 2026,
+      "citations": 1,
+      "citescore": 3.1,
+      "sjr": 0.56,
+      "quartile": "Q3",
+      "doi": "10.1111/iej.70121",
+      "scopus_id": "105031004543",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "Turkey"
+      ]
+    },
+    {
+      "title": "The indian pulsar timing array data release 2: II. Customised single-pulsar noise analysis and noise budget",
+      "authors": "Nobleson K.",
+      "primary_author": "Nobleson K.",
+      "department": "Department of Physics",
+      "journal": "Journal of High Energy Astrophysics",
+      "year": 2026,
+      "citations": 2,
+      "citescore": 3.7,
+      "sjr": 0.62,
+      "quartile": "Q3",
+      "doi": "10.1016/j.jheap.2026.100594",
+      "scopus_id": "105033285648",
+      "is_international_collab": true,
+      "is_industry_collab": false,
+      "countries": [
+        "Japan"
+      ]
+    },
+    {
+      "title": "Quality By Design Approach In HPLC Method Development and Validation for Simultaneous Determination of Carvedilol and Ivabradine with Greenness Assessment",
+      "authors": "Patil A.",
+      "primary_author": "Patil A.",
+      "department": "Department of Chemistry",
+      "journal": "Letters in Applied Nanobioscience",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.33263/LIANBS152.067",
+      "scopus_id": "105043717913",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "A Decision-Oriented MCDA Framework for Comparative Evaluation of Blockchain Platforms",
+      "authors": "Shah B.D.",
+      "primary_author": "Shah B.D.",
+      "department": "Department of Computer Science",
+      "journal": "International Academic Journal of Science and Engineering",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.71086/IAJSE/V13I2/IAJSE1389",
+      "scopus_id": "105047433311",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Business Sustainability and Competitive Advantage: The Role of Innovation, Governance, and Strategic Management",
+      "authors": "Bhanushali M.M.",
+      "primary_author": "Bhanushali M.M.",
+      "department": "Department of Chemistry",
+      "journal": "Natural Resources for Human Health",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "",
+      "scopus_id": "105047267430",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Intelligent Prediction Of Environmental Stress And Disease Risk In Sustainable Livestock Systems",
+      "authors": "Gaikwad B.N.",
+      "primary_author": "Gaikwad B.N.",
+      "department": "Department of Computer Science",
+      "journal": "International Journal of Artificial Intelligence and Machine Learning",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.51483/IJAIML.6.6s.2026.1239-1248",
+      "scopus_id": "105048024867",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Predictive Maintenance Systems Using Data-Driven Diagnostics for Industrial Rotating Machinery",
+      "authors": "Harshini R.",
+      "primary_author": "Harshini R.",
+      "department": "Department of Computer Science",
+      "journal": "International Journal of Artificial Intelligence and Machine Learning",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.51483/ijaiml.6.6s.2026.258-266",
+      "scopus_id": "105046647500",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "DEEP LEARNING-BASED BRAIN STROKE DETECTION: CLINICAL RELIABILITY ANALYSIS OF CNN AND HYBRID NEURORESUNET ARCHITECTURES",
+      "authors": "Hingmire A.",
+      "primary_author": "Hingmire A.",
+      "department": "Department of Computer Science",
+      "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70917/ijcisim-2026-2192",
+      "scopus_id": "105045017311",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "AI-BASED CHEST X-RAY SCREENING FOR EARLY TUBERCULOSIS DETECTION",
+      "authors": "Sankhe P.",
+      "primary_author": "Sankhe P.",
+      "department": "Department of Chemistry",
+      "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70917/ijcisim-2026-2117",
+      "scopus_id": "105044628759",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Strategic Human Resources Practices and Their Impact on Marketing Effectiveness in Electronic Sector",
+      "authors": "Sayankar S.N.",
+      "primary_author": "Sayankar S.N.",
+      "department": "Department of Commerce & Management Studies",
+      "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.70917/ijcisim-2026-2398",
+      "scopus_id": "105044623226",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Tuning NiO/RGO nano-composite electrodes: The synergistic role of polyaniline and polypyrrole in structure, morphology, and charge storage dynamics in supercapacitors",
+      "authors": "Gayathri T.",
+      "primary_author": "Gayathri T.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Energy Storage",
+      "year": 2026,
+      "citations": 6,
+      "citescore": 9.2,
+      "sjr": 1.38,
+      "quartile": "Q1",
+      "doi": "10.1016/j.est.2026.122061",
+      "scopus_id": "105034992234",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Revisionary notes on Bulbostylis (Cyperaceae) in India: new combinations, synonymy and lectotypification",
+      "authors": "Madhav N.A.",
+      "primary_author": "Madhav N.A.",
+      "department": "Department of Chemistry",
+      "journal": "Phytotaxa",
+      "year": 2026,
+      "citations": 1,
+      "citescore": 3.1,
+      "sjr": 0.56,
+      "quartile": "Q3",
+      "doi": "10.11646/phytotaxa.762.2.4",
+      "scopus_id": "105042117921",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Interfacial control of Ni–MnO2@di-(2-ethylhexyl) phosphate nanosheets via particle extraction through the liquid-liquid interface strategy for high-performance supercapacitors",
+      "authors": "Bhosale M.U.",
+      "primary_author": "Bhosale M.U.",
+      "department": "National Centre for Nanosciences and Nanotechnology (NCNNUM)",
+      "journal": "Chemical Engineering Journal",
+      "year": 2026,
+      "citations": 3,
+      "citescore": 7.1,
+      "sjr": 1.14,
+      "quartile": "Q1",
+      "doi": "10.1016/j.cej.2026.176577",
+      "scopus_id": "105036699041",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Tuning pyrolysis temperature to modulate metal–carbon interfaces for advanced electrocatalysis and energy storage applications",
+      "authors": "Khan T.M.A.",
+      "primary_author": "Khan T.M.A.",
+      "department": "Department of Chemistry",
+      "journal": "Materials Chemistry and Physics",
+      "year": 2026,
+      "citations": 5,
+      "citescore": 8.5,
+      "sjr": 1.3,
+      "quartile": "Q1",
+      "doi": "10.1016/j.matchemphys.2026.132368",
+      "scopus_id": "105034720144",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Cyber-Physical Attack Detection in Water Distribution Systems Using a Hybrid Ensemble of XGBoost, Isolation Forest, and LSTM Autoencoder on the BATADAL Dataset",
+      "authors": "Nemade B.",
+      "primary_author": "Nemade B.",
+      "department": "Department of Physics",
+      "journal": "Journal of Intelligent Decision Making and Information Science",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.59543/jidmis.v3.911",
+      "scopus_id": "105046048892",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Fe-doped Zn-MOF as a multifunctional electrode for high-rate supercapacitors and efficient oxygen evolution catalysis",
+      "authors": "Kamble D.D.",
+      "primary_author": "Kamble D.D.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Power Sources",
+      "year": 2026,
+      "citations": 7,
+      "citescore": 9.9,
+      "sjr": 1.46,
+      "quartile": "Q1",
+      "doi": "10.1016/j.jpowsour.2026.239978",
+      "scopus_id": "105034623198",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "The Monetary Theory of Production",
+      "authors": "Correa R.",
+      "primary_author": "Correa R.",
+      "department": "Mumbai School of Economics and Public Policy",
+      "journal": "Economic and Political Weekly",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 2.2,
+      "sjr": 0.48,
+      "quartile": "Q2",
+      "doi": "",
+      "scopus_id": "105041988822",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Repurposing amide-based drugs unveils inhibition mechanisms of plasmodium falciparum Plasmepsin V enzymatic activity for antimalarial therapy",
+      "authors": "Prajapati A.K.",
+      "primary_author": "Prajapati A.K.",
+      "department": "Department of Chemistry",
+      "journal": "Bioorganic Chemistry",
+      "year": 2026,
+      "citations": 2,
+      "citescore": 3.7,
+      "sjr": 0.62,
+      "quartile": "Q3",
+      "doi": "10.1016/j.bioorg.2026.109647",
+      "scopus_id": "105030388377",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "A thermally robust Dy3+-activated Sc2Mo3O12 phosphor for sustainable WLED lighting and phase transition-enabled visual cryogenic thermometry",
+      "authors": "Balhara A.",
+      "primary_author": "Balhara A.",
+      "department": "Department of Chemistry",
+      "journal": "Journal of Materials Chemistry C",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "10.1039/d6tc00119j",
+      "scopus_id": "105035590103",
+      "is_international_collab": false,
+      "is_industry_collab": true,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "ON ϕ-n-ABSORBING PRIMARY SUBMODULES",
+      "authors": "Shaikh N.I.",
+      "primary_author": "Shaikh N.I.",
+      "department": "Department of Mathematics",
+      "journal": "Palestine Journal of Mathematics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "",
+      "scopus_id": "105042085557",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    },
+    {
+      "title": "Labeling of Power Graph of Some Finite Groups",
+      "authors": "Visave C.",
+      "primary_author": "Visave C.",
+      "department": "Department of Mathematics",
+      "journal": "Palestine Journal of Mathematics",
+      "year": 2026,
+      "citations": 0,
+      "citescore": 1.5,
+      "sjr": 0.3,
+      "quartile": "Q4",
+      "doi": "",
+      "scopus_id": "105040932694",
+      "is_international_collab": false,
+      "is_industry_collab": false,
+      "countries": [
+        "India"
+      ]
+    }
+  ]
+}
