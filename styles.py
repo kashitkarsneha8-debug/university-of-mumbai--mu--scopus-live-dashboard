@@ -637,6 +637,107 @@ def render_kpi_card(
     """
 
 
+def render_faculty_podium_card(
+    rank: int,
+    author_name: str,
+    dept: str,
+    papers: int,
+    citations: int,
+    cpp: float,
+    h_index: int,
+    theme: str = "dark"
+) -> str:
+    """
+    Render Top 3 Faculty Podium Card (Gold, Silver, Bronze) with institutional styling.
+    """
+    is_dark = theme.lower() == "dark"
+
+    medals = {
+        1: ("🥇", "GOLD LAUREATE", "#F59E0B", "rgba(245, 158, 11, 0.18)", "rgba(245, 158, 11, 0.45)"),
+        2: ("🥈", "SILVER LAUREATE", "#94A3B8", "rgba(148, 163, 184, 0.15)", "rgba(148, 163, 184, 0.45)"),
+        3: ("🥉", "BRONZE LAUREATE", "#D97706", "rgba(217, 119, 6, 0.15)", "rgba(217, 119, 6, 0.45)")
+    }
+
+    icon, badge_text, border_color, glow_bg, stroke = medals.get(
+        rank, ("🏆", f"RANK #{rank}", "#0284C7", "rgba(2, 132, 199, 0.15)", "rgba(2, 132, 199, 0.45)")
+    )
+
+    card_bg = (
+        f"linear-gradient(135deg, {glow_bg} 0%, rgba(14, 23, 42, 0.88) 100%)"
+        if is_dark else
+        f"linear-gradient(135deg, {glow_bg} 0%, rgba(255, 255, 255, 0.95) 100%)"
+    )
+
+    text_primary = "#F8FAFC" if is_dark else "#0F172A"
+    text_secondary = "#94A3B8" if is_dark else "#475569"
+    dept_short = dept.replace("Department of ", "").replace("National Centre for Nanosciences and Nanotechnology (NCNNUM)", "NCNNUM Nano")
+
+    return f"""
+    <div style="
+        background: {card_bg};
+        border: 1.5px solid {stroke};
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 12px;
+        transition: transform 0.25s ease;
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <span style="
+                background: {stroke};
+                color: #FFFFFF;
+                font-size: 0.70rem;
+                font-weight: 800;
+                letter-spacing: 0.06em;
+                padding: 3px 10px;
+                border-radius: 9999px;
+            ">
+                {icon} {badge_text}
+            </span>
+            <span style="font-size: 1.4rem;">{icon}</span>
+        </div>
+
+        <div style="font-size: 1.25rem; font-weight: 800; color: {text_primary}; margin-bottom: 3px;">
+            {author_name}
+        </div>
+        <div style="font-size: 0.78rem; font-weight: 600; color: #0284C7; margin-bottom: 14px;">
+            🏛️ {dept_short}
+        </div>
+
+        <div style="
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            background: {'rgba(7, 13, 30, 0.55)' if is_dark else 'rgba(241, 245, 249, 0.75)'};
+            border-radius: 10px;
+            padding: 10px 8px;
+            text-align: center;
+        ">
+            <div>
+                <div style="font-size: 1.10rem; font-weight: 800; color: {text_primary};">{papers}</div>
+                <div style="font-size: 0.65rem; color: {text_secondary}; text-transform: uppercase;">Papers</div>
+            </div>
+            <div>
+                <div style="font-size: 1.10rem; font-weight: 800; color: #F59E0B;">{citations:,}</div>
+                <div style="font-size: 0.65rem; color: {text_secondary}; text-transform: uppercase;">Cites</div>
+            </div>
+            <div>
+                <div style="font-size: 1.10rem; font-weight: 800; color: #10B981;">{cpp:.1f}</div>
+                <div style="font-size: 0.65rem; color: {text_secondary}; text-transform: uppercase;">CPP</div>
+            </div>
+            <div>
+                <div style="font-size: 1.10rem; font-weight: 800; color: #38BDF8;">h-{h_index}</div>
+                <div style="font-size: 0.65rem; color: {text_secondary}; text-transform: uppercase;">h-Index</div>
+            </div>
+        </div>
+    </div>
+    """
+
+
 def render_section_header(
     title: str,
     subtitle: str = "",

@@ -310,55 +310,75 @@ def get_author_profile_metrics(df: pd.DataFrame, author_name: str) -> Dict[str, 
     Deep-dive bibliometric profile metrics for an individual researcher.
     
     Returns:
-        Dict with papers, citations, h-index, CPP, top journals, department,
-        collaboration percentages, and list of publications.
+        Dict with papers, citations, h-index, CPP, q1_count, q1_ratio, coauthors_count,
+        top journals, department, collaboration percentages, papers_df, trend_df,
+        and list of publications.
     """
     df = _clean_dataframe(df)
+    empty_res = {
+        "author_name": author_name,
+        "total_papers": 0,
+        "total_citations": 0,
+        "cpp": 0.0,
+        "h_index": 0,
+        "q1_count": 0,
+        "q1_ratio": 0.0,
+        "coauthors_count": 0,
+        "primary_department": "Unknown",
+        "international_collab_pct": 0.0,
+        "industry_collab_pct": 0.0,
+        "top_journals": {},
+        "publications": [],
+        "papers_df": pd.DataFrame(),
+        "trend_df": pd.DataFrame()
+    }
+
     if df.empty or not author_name:
-        return {
-            "author_name": author_name,
-            "total_papers": 0,
-            "total_citations": 0,
-            "cpp": 0.0,
-            "h_index": 0,
-            "primary_department": "Unknown",
-            "international_collab_pct": 0.0,
-            "industry_collab_pct": 0.0,
-            "top_journals": [],
-            "publications": []
-        }
+        return empty_res
 
     # Match author in authors string or primary_author column (case-insensitive)
     name_clean = author_name.strip().lower()
     mask = df["authors"].str.lower().str.contains(re.escape(name_clean)) | df["primary_author"].str.lower().str.contains(re.escape(name_clean))
-    author_df = df[mask]
+    author_df = df[mask].copy()
 
     if author_df.empty:
-        return {
-            "author_name": author_name,
-            "total_papers": 0,
-            "total_citations": 0,
-            "cpp": 0.0,
-            "h_index": 0,
-            "primary_department": "University of Mumbai",
-            "international_collab_pct": 0.0,
-            "industry_collab_pct": 0.0,
-            "top_journals": [],
-            "publications": []
-        }
+        empty_res["primary_department"] = "University of Mumbai"
+        return empty_res
 
     total_papers = len(author_df)
     total_citations = int(author_df["citations"].sum())
     cpp = round(total_citations / total_papers, 2) if total_papers > 0 else 0.0
     h_idx = calculate_h_index(author_df["citations"].tolist())
 
+    # Quartiles
+    q1_count = int((author_df["quartile"].str.upper() == "Q1").sum())
+    q1_ratio = round((q1_count / total_papers) * 100, 1) if total_papers > 0 else 0.0
+
+    # Co-authors
+    coauthors_set = set()
+    for a_str in author_df["authors"].dropna():
+        for name in a_str.split(","):
+            n_clean = name.strip()
+            if n_clean and n_clean.lower() != name_clean and len(n_clean) > 2:
+                coauthors_set.add(n_clean)
+    coauthors_count = len(coauthors_set)
+
+    # Department
     dept_counts = author_df["department"].value_counts()
     primary_dept = dept_counts.index[0] if not dept_counts.empty else "University of Mumbai"
 
-    intl_pct = round((author_df["is_international_collab"].sum() / total_papers) * 100, 2)
-    ind_pct = round((author_df["is_industry_collab"].sum() / total_papers) * 100, 2)
+    intl_pct = round((author_df["is_international_collab"].sum() / total_papers) * 100, 1)
+    ind_pct = round((author_df["is_industry_collab"].sum() / total_papers) * 100, 1)
 
     top_journals = author_df["journal"].value_counts().head(5).to_dict()
+
+    # Trend DataFrame
+    trend_grouped = author_df.groupby("year").agg(
+        publications=("title", "count"),
+        citations=("citations", "sum")
+    ).reset_index().sort_values("year", ascending=True)
+
+    trend_grouped["cumulative"] = trend_grouped["publications"].cumsum()
 
     recent_pubs = author_df.sort_values(by=["year", "citations"], ascending=[False, False])[
         ["title", "journal", "year", "citations", "quartile", "doi"]
@@ -370,12 +390,438 @@ def get_author_profile_metrics(df: pd.DataFrame, author_name: str) -> Dict[str, 
         "total_citations": total_citations,
         "cpp": cpp,
         "h_index": h_idx,
+        "q1_count": q1_count,
+        "q1_ratio": q1_ratio,
+        "coauthors_count": coauthors_count,
         "primary_department": primary_dept,
         "international_collab_pct": intl_pct,
         "industry_collab_pct": ind_pct,
         "top_journals": top_journals,
-        "publications": recent_pubs
+        "publications": recent_pubs,
+        "papers_df": author_df,
+        "trend_df": trend_grouped
     }
+
+
+def _generate_svg_trend_chart(trend_df: pd.DataFrame) -> str:
+    """
+    Generate a pure, standalone SVG publication velocity chart for printing.
+    """
+    if trend_df is None or trend_df.empty:
+        return ""
+
+    w, h = 680, 170
+    pad_l, pad_r, pad_t, pad_b = 45, 25, 25, 30
+    plot_w = w - pad_l - pad_r
+    plot_h = h - pad_t - pad_b
+
+    years = trend_df["year"].tolist()
+    pubs = trend_df["publications"].tolist()
+    max_p = max(pubs) if max(pubs) > 0 else 1
+
+    n = len(years)
+    step = plot_w / max(1, n)
+    bar_w = max(14, step * 0.52)
+
+    svg = [
+        f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; font-family:-apple-system, sans-serif;">'
+    ]
+
+    # Grid lines & ticks
+    for i in range(4):
+        y_val = pad_t + plot_h * (i / 3)
+        lbl = int(round(max_p * (1 - i / 3)))
+        svg.append(f'<line x1="{pad_l}" y1="{y_val}" x2="{w - pad_r}" y2="{y_val}" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" />')
+        svg.append(f'<text x="{pad_l - 8}" y="{y_val + 4}" fill="#64748b" font-size="10" text-anchor="end">{lbl}</text>')
+
+    # Bars & Year labels
+    points = []
+    for i, (yr, p) in enumerate(zip(years, pubs)):
+        bx = pad_l + i * step + (step - bar_w) / 2
+        bh = (p / max_p) * plot_h
+        by = pad_t + plot_h - bh
+        cx = bx + bar_w / 2
+        points.append((cx, by))
+
+        svg.append(f'<rect x="{bx}" y="{by}" width="{bar_w}" height="{bh}" fill="#0284c7" rx="3" />')
+        svg.append(f'<text x="{cx}" y="{by - 5}" fill="#0284c7" font-size="10" font-weight="bold" text-anchor="middle">{p}</text>')
+        svg.append(f'<text x="{cx}" y="{h - 10}" fill="#475569" font-size="10" text-anchor="middle">{yr}</text>')
+
+    # Trend line connecting bar tops
+    if len(points) > 1:
+        path_d = "M " + " L ".join([f"{px},{py}" for px, py in points])
+        svg.append(f'<path d="{path_d}" fill="none" stroke="#f59e0b" stroke-width="2.5" />')
+        for px, py in points:
+            svg.append(f'<circle cx="{px}" cy="{py}" r="3.5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />')
+
+    svg.append('</svg>')
+    return "".join(svg)
+
+
+def generate_author_print_html(
+    auth_profile: Dict[str, Any],
+    papers_df: Optional[pd.DataFrame] = None,
+    trend_df: Optional[pd.DataFrame] = None
+) -> str:
+    """
+    Generate a complete, standalone, print-optimized HTML dossier document
+    for a faculty member of University of Mumbai.
+    
+    Includes:
+    - Institutional crest and verification header.
+    - Author Dossier Header with badges.
+    - 5 Executive KPI boxes.
+    - Standalone SVG annual output chart.
+    - Top 5 Landmark Publications.
+    - Complete research publications catalog table.
+    """
+    import styles
+
+    author = auth_profile.get("author_name", "Faculty Researcher")
+    dept = auth_profile.get("primary_department", "University of Mumbai")
+    total_papers = auth_profile.get("total_papers", 0)
+    total_cites = auth_profile.get("total_citations", 0)
+    cpp = auth_profile.get("cpp", 0.0)
+    h_index = auth_profile.get("h_index", 0)
+    q1_ratio = auth_profile.get("q1_ratio", 0.0)
+    q1_count = auth_profile.get("q1_count", 0)
+    intl_pct = auth_profile.get("international_collab_pct", 0.0)
+    ind_pct = auth_profile.get("industry_collab_pct", 0.0)
+    coauthors = auth_profile.get("coauthors_count", 0)
+
+    if trend_df is None or trend_df.empty:
+        trend_df = auth_profile.get("trend_df", pd.DataFrame())
+
+    if papers_df is None or papers_df.empty:
+        papers_df = auth_profile.get("papers_df", pd.DataFrame())
+
+    # SVG chart
+    svg_chart = _generate_svg_trend_chart(trend_df)
+
+    # Top 5 landmark papers
+    top_papers = []
+    if not papers_df.empty:
+        top_df = papers_df.sort_values(by="citations", ascending=False).head(5)
+        top_papers = top_df.to_dict(orient="records")
+
+    # All papers
+    all_papers = []
+    if not papers_df.empty:
+        all_papers = papers_df.sort_values(by=["year", "citations"], ascending=[False, False]).to_dict(orient="records")
+
+    # Logos
+    mu_logo = styles.MU_LOGO_B64
+    icare_logo = styles.ICARE_LOGO_B64
+    gen_date = datetime.datetime.now().strftime("%B %d, %Y")
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Faculty Research Dossier - {author} | University of Mumbai</title>
+<style>
+    @page {{
+        size: A4;
+        margin: 14mm 12mm 14mm 12mm;
+    }}
+    * {{
+        box-sizing: border-box;
+    }}
+    body {{
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #0f172a;
+        background: #ffffff;
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        line-height: 1.45;
+    }}
+    @media print {{
+        body {{
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }}
+        .no-print {{ display: none !important; }}
+    }}
+    .header-bar {{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #0284c7;
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+    }}
+    .inst-title {{
+        font-size: 18px;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.01em;
+    }}
+    .inst-sub {{
+        font-size: 11px;
+        color: #0284c7;
+        font-weight: 700;
+        margin-top: 2px;
+    }}
+    .inst-meta {{
+        font-size: 10px;
+        color: #64748b;
+        margin-top: 3px;
+    }}
+    .author-dossier-card {{
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin-bottom: 16px;
+    }}
+    .author-name {{
+        font-size: 22px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 4px 0;
+    }}
+    .author-dept {{
+        font-size: 13px;
+        font-weight: 600;
+        color: #0284c7;
+        margin-bottom: 10px;
+    }}
+    .badges-row {{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }}
+    .badge {{
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 9999px;
+        display: inline-block;
+    }}
+    .badge-gold {{ background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }}
+    .badge-blue {{ background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }}
+    .badge-green {{ background: #d1fae5; color: #047857; border: 1px solid #a7f3d0; }}
+    .badge-gray {{ background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }}
+    
+    .kpi-grid {{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        margin-bottom: 16px;
+    }}
+    .kpi-box {{
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-top: 3px solid #0284c7;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+    }}
+    .kpi-box-val {{
+        font-size: 20px;
+        font-weight: 800;
+        color: #0f172a;
+        line-height: 1.1;
+    }}
+    .kpi-box-lbl {{
+        font-size: 9px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #64748b;
+        margin-top: 4px;
+    }}
+    .section-title {{
+        font-size: 13px;
+        font-weight: 800;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 18px 0 8px 0;
+        border-left: 3px solid #0284c7;
+        padding-left: 8px;
+    }}
+    table {{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        font-size: 10px;
+    }}
+    th {{
+        background: #f1f5f9;
+        color: #334155;
+        font-weight: 700;
+        text-align: left;
+        padding: 6px 8px;
+        border: 1px solid #cbd5e1;
+    }}
+    td {{
+        padding: 5px 8px;
+        border: 1px solid #e2e8f0;
+        color: #1e293b;
+        vertical-align: top;
+    }}
+    tr:nth-child(even) {{
+        background: #f8fafc;
+    }}
+    .footer-stamp {{
+        border-top: 1px solid #cbd5e1;
+        padding-top: 10px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 9px;
+        color: #64748b;
+    }}
+</style>
+</head>
+<body>
+
+<!-- Institutional Header -->
+<div class="header-bar">
+    <div style="display: flex; align-items: center; gap: 14px;">
+        {'<img src="' + mu_logo + '" style="height: 52px; object-fit: contain;" />' if mu_logo else ''}
+        {'<img src="' + icare_logo + '" style="height: 44px; object-fit: contain;" />' if icare_logo else ''}
+        <div>
+            <div class="inst-title">UNIVERSITY OF MUMBAI</div>
+            <div class="inst-sub">DIRECTORATE OF RESEARCH & ACADEMIC SURVEILLANCE</div>
+            <div class="inst-meta">NIRF: IR-O-U-0318 &bull; NAAC Grade A++ (CGPA 3.65) &bull; Scopus AF-ID: 60028245</div>
+        </div>
+    </div>
+    <div style="text-align: right;">
+        <div style="font-size: 11px; font-weight: 700; color: #0f172a;">FACULTY RESEARCH DOSSIER</div>
+        <div style="font-size: 9px; color: #64748b; margin-top: 2px;">Report Date: {gen_date}</div>
+        <div style="font-size: 9px; color: #10b981; font-weight: 700; margin-top: 2px;">● Scopus Authenticated</div>
+    </div>
+</div>
+
+<!-- Author Dossier Card -->
+<div class="author-dossier-card">
+    <div class="author-name">{author}</div>
+    <div class="author-dept">🏛️ {dept}</div>
+    
+    <div class="badges-row">
+        <span class="badge badge-gold">⭐ {q1_count} Top-Quartile Q1 Publications</span>
+        <span class="badge badge-blue">🌐 {intl_pct:.1f}% International Co-authorship</span>
+        <span class="badge badge-green">🏢 {ind_pct:.1f}% Corporate / Industry R&D</span>
+        <span class="badge badge-gray">👥 {coauthors} Unique Co-authors</span>
+    </div>
+</div>
+
+<!-- 5 Executive KPI Boxes -->
+<div class="kpi-grid">
+    <div class="kpi-box">
+        <div class="kpi-box-val">{total_papers}</div>
+        <div class="kpi-box-lbl">Scopus Papers</div>
+    </div>
+    <div class="kpi-box">
+        <div class="kpi-box-val" style="color: #b45309;">{total_cites:,}</div>
+        <div class="kpi-box-lbl">Total Citations</div>
+    </div>
+    <div class="kpi-box">
+        <div class="kpi-box-val" style="color: #047857;">{cpp:.2f}</div>
+        <div class="kpi-box-lbl">Cites / Paper (CPP)</div>
+    </div>
+    <div class="kpi-box">
+        <div class="kpi-box-val" style="color: #0369a1;">h-{h_index}</div>
+        <div class="kpi-box-lbl">Scopus h-Index</div>
+    </div>
+    <div class="kpi-box">
+        <div class="kpi-box-val" style="color: #7c3aed;">{q1_ratio:.1f}%</div>
+        <div class="kpi-box-lbl">Q1 Ratio</div>
+    </div>
+</div>
+
+<!-- Annual Velocity Chart -->
+<div class="section-title">📊 Annual Publishing Velocity & Accrual</div>
+<div style="margin-bottom: 16px;">
+    {svg_chart}
+</div>
+
+<!-- Top 5 Landmark Contributions -->
+<div class="section-title">🏆 Top 5 Landmark Research Contributions</div>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 5%;">#</th>
+            <th style="width: 48%;">Title</th>
+            <th style="width: 25%;">Journal</th>
+            <th style="width: 7%;">Year</th>
+            <th style="width: 8%;">Cites</th>
+            <th style="width: 7%;">Tier</th>
+        </tr>
+    </thead>
+    <tbody>
+"""
+    for idx, p in enumerate(top_papers, 1):
+        html += f"""
+        <tr>
+            <td style="text-align: center; font-weight: bold;">{idx}</td>
+            <td style="font-weight: 600;">{p.get('title', '')}</td>
+            <td style="color: #475569;">{p.get('journal', '')}</td>
+            <td style="text-align: center;">{p.get('year', '')}</td>
+            <td style="text-align: center; font-weight: bold; color: #b45309;">{p.get('citations', 0)}</td>
+            <td style="text-align: center; font-weight: bold; color: #047857;">{p.get('quartile', '')}</td>
+        </tr>
+        """
+
+    html += f"""
+    </tbody>
+</table>
+
+<!-- Full Publications Catalog -->
+<div class="section-title">📚 Comprehensive Indexed Publications ({total_papers} Documents)</div>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 4%;">#</th>
+            <th style="width: 46%;">Title</th>
+            <th style="width: 24%;">Journal</th>
+            <th style="width: 7%;">Year</th>
+            <th style="width: 7%;">Cites</th>
+            <th style="width: 6%;">Tier</th>
+            <th style="width: 6%;">DOI</th>
+        </tr>
+    </thead>
+    <tbody>
+"""
+    for idx, p in enumerate(all_papers, 1):
+        doi_str = str(p.get("doi", "")).strip()
+        doi_cell = f'<a href="https://doi.org/{doi_str}" target="_blank" style="color:#0284c7; text-decoration:none;">DOI ↗</a>' if doi_str and doi_str.startswith("10.") else "-"
+        html += f"""
+        <tr>
+            <td style="text-align: center;">{idx}</td>
+            <td>{p.get('title', '')}</td>
+            <td style="color: #475569;">{p.get('journal', '')}</td>
+            <td style="text-align: center;">{p.get('year', '')}</td>
+            <td style="text-align: center; font-weight: 600;">{p.get('citations', 0)}</td>
+            <td style="text-align: center;">{p.get('quartile', '')}</td>
+            <td style="text-align: center;">{doi_cell}</td>
+        </tr>
+        """
+
+    html += f"""
+    </tbody>
+</table>
+
+<!-- Institutional Verification Footer -->
+<div class="footer-stamp">
+    <div>
+        <strong>University of Mumbai</strong> &bull; Official Bibliometric Surveillance Record<br>
+        Source: Elsevier Scopus Database AF-ID(60028245)
+    </div>
+    <div style="text-align: right;">
+        Verification ID: MU-FAC-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}<br>
+        Page 1 of 1 (Consolidated Dossier)
+    </div>
+</div>
+
+</body>
+</html>
+"""
+    return html
 
 
 def export_to_bibtex(df: pd.DataFrame) -> str:
