@@ -185,14 +185,20 @@ if "citations" in raw_df.columns:
 
 # Sidebar Filter Controls
 with st.sidebar:
-    min_year = int(raw_df["year"].min()) if not raw_df.empty else 2018
-    max_year = int(raw_df["year"].max()) if not raw_df.empty else 2026
+    data_min_year = int(raw_df["year"].min()) if not raw_df.empty else 2018
+    data_max_year = int(raw_df["year"].max()) if not raw_df.empty else 2026
+
+    # Defensively guard against single-year data causing StreamlitInvalidMinMaxError / RangeError
+    min_year = min(data_min_year, 2018)
+    max_year = max(data_max_year, 2026)
+    if min_year >= max_year:
+        min_year = max_year - 1
 
     selected_years = st.slider(
         "Publication Window:",
         min_value=min_year,
         max_value=max_year,
-        value=(min_year, max_year),
+        value=(data_min_year if data_min_year < max_year else min_year, max_year),
         step=1
     )
 
