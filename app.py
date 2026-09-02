@@ -123,13 +123,13 @@ def make_doi_link(row):
 # Sidebar Controls & Navigation
 # ---------------------------------------------------------
 with st.sidebar:
-    st.markdown(f"""
+    st.markdown(styles.clean_html(f"""
     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
         <div style="font-weight: 800; font-size: 1.15rem; color: {'#F8FAFC' if is_dark else '#0F172A'};">
             🏛️ MU Intelligence
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """), unsafe_allow_html=True)
 
     # Theme Toggle Switcher
     theme_col1, theme_col2 = st.columns([1, 1])
@@ -217,14 +217,14 @@ with st.sidebar:
     search_query = st.text_input("Search Keyword / Title:", placeholder="e.g. Nanoparticle, AI, Ferrite")
 
     st.markdown("---")
-    st.markdown(f"""
+    st.markdown(styles.clean_html(f"""
     <div style="font-size: 0.75rem; color: {'#94A3B8' if is_dark else '#64748B'}; line-height: 1.4;">
         <strong>University of Mumbai</strong><br>
         Established: 1857 &bull; NIRF: IR-O-U-0318<br>
         NAAC: Grade A++ (CGPA 3.65)<br>
         Scopus AF-ID: 60028245
     </div>
-    """, unsafe_allow_html=True)
+    """), unsafe_allow_html=True)
 
 # Apply Filters
 collab_filter_val = None
@@ -1040,7 +1040,7 @@ with tab5:
             st.toast(f"Opening isolated print dossier for {selected_faculty}...", icon="🖨️")
 
         # 3. Dynamic Author Dossier Header Card
-        st.markdown(f"""
+        st.markdown(styles.clean_html(f"""
         <div class="glass-card" style="margin-top: 14px; margin-bottom: 16px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
                 <div>
@@ -1058,7 +1058,6 @@ with tab5:
                 </div>
             </div>
 
-            <!-- Badges Row -->
             <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
                 <span class="kpi-badge badge-gold" style="font-size: 0.74rem; padding: 4px 11px; border-radius: 9999px;">
                     ⭐ {auth_prof['q1_count']} Q1 Publications
@@ -1082,7 +1081,7 @@ with tab5:
                 </span>
             </div>
         </div>
-        """, unsafe_allow_html=True)
+        """), unsafe_allow_html=True)
 
         # 5 KPI Chips Row
         ak1, ak2, ak3, ak4, ak5 = st.columns(5)
@@ -1330,12 +1329,12 @@ with tab6:
         )
 
     with count_col:
-        st.markdown(f"""
+        st.markdown(styles.clean_html(f"""
         <div style="text-align: right; padding-top: 8px; font-size: 0.85rem; color: {'#94A3B8' if is_dark else '#475569'};">
             Displaying <strong>{len(display_feed_df):,}</strong> of <strong>{len(feed_df):,}</strong> filtered documents
             (Total Repository: {len(raw_df):,})
         </div>
-        """, unsafe_allow_html=True)
+        """), unsafe_allow_html=True)
 
     st.markdown("<div style='margin-bottom: 12px;'></div>", unsafe_allow_html=True)
 
@@ -1462,10 +1461,10 @@ Feel free to ask questions like:
 # Footer
 # ---------------------------------------------------------
 st.markdown("---")
-st.markdown(f"""
+st.markdown(styles.clean_html(f"""
 <div style="text-align: center; padding: 18px 0; color: {'#94A3B8' if is_dark else '#64748B'}; font-size: 0.82rem;">
     <strong>University of Mumbai (MU) Live Scopus Intelligence Dashboard</strong> &bull;
     Scopus Institutional Query AF-ID(60028245) &bull; NIRF ID: IR-O-U-0318 &bull;
     Data Pipeline: <em>{data_source_label}</em> &bull; Built with Streamlit & Plotly
 </div>
-""", unsafe_allow_html=True)
+"""), unsafe_allow_html=True)

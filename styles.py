@@ -363,6 +363,17 @@ def get_custom_css(theme: str = "dark") -> str:
     return css
 
 
+def clean_html(html_str: str) -> str:
+    """
+    Strips HTML comments and leading whitespace from every line so that
+    Streamlit's Python-Markdown parser never converts indented lines into <pre><code> blocks.
+    """
+    import re
+    cleaned = re.sub(r'<!--.*?-->', '', html_str, flags=re.DOTALL)
+    lines = [line.strip() for line in cleaned.splitlines() if line.strip()]
+    return " ".join(lines)
+
+
 def render_icare_topbar(theme: str = "dark") -> str:
     """
     Render ICARE top navigation bar:
@@ -436,7 +447,7 @@ def render_icare_topbar(theme: str = "dark") -> str:
         </div>
     </div>
     """
-    return html
+    return clean_html(html)
 
 
 def render_icare_hero(total_pubs: int, total_cites: int, theme: str = "dark") -> str:
@@ -606,7 +617,7 @@ def render_icare_hero(total_pubs: int, total_cites: int, theme: str = "dark") ->
         </div>
     </div>
     """
-    return html
+    return clean_html(html)
 
 
 def render_kpi_card(
@@ -622,7 +633,7 @@ def render_kpi_card(
     Generate clean HTML for an executive KPI metric card.
     """
     badge_html = f'<span class="kpi-badge badge-{badge_type}">{badge}</span>' if badge else ""
-    return f"""
+    return clean_html(f"""
     <div class="kpi-card">
         <div class="kpi-header">
             <span class="kpi-title">{title}</span>
@@ -634,7 +645,7 @@ def render_kpi_card(
             <span>{subtitle}</span>
         </div>
     </div>
-    """
+    """)
 
 
 def render_faculty_podium_card(
@@ -672,7 +683,7 @@ def render_faculty_podium_card(
     text_secondary = "#94A3B8" if is_dark else "#475569"
     dept_short = dept.replace("Department of ", "").replace("National Centre for Nanosciences and Nanotechnology (NCNNUM)", "NCNNUM Nano")
 
-    return f"""
+    return clean_html(f"""
     <div style="
         background: {card_bg};
         border: 1.5px solid {stroke};
@@ -735,7 +746,7 @@ def render_faculty_podium_card(
             </div>
         </div>
     </div>
-    """
+    """)
 
 
 def render_section_header(
@@ -756,7 +767,7 @@ def render_section_header(
         if badge_text else ""
     )
 
-    return f"""
+    return clean_html(f"""
     <div style="margin: 28px 0 16px 0; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px;">
         <div>
             <div style="display: flex; align-items: center; gap: 8px;">
@@ -769,7 +780,7 @@ def render_section_header(
             {f'<p style="margin: 4px 0 0 32px; font-size: 0.84rem; color: {text_secondary};">{subtitle}</p>' if subtitle else ''}
         </div>
     </div>
-    """
+    """)
 
 
 if __name__ == "__main__":
