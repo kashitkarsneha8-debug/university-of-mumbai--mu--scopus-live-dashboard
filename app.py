@@ -16,6 +16,7 @@ Features:
 import os
 import json
 import base64
+import io
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -29,6 +30,7 @@ import scopus_api
 import mock_data
 import data_processor as dp
 import styles
+import ai_copilot
 
 # Page Configuration
 st.set_page_config(
@@ -297,14 +299,16 @@ with kpi_r2_c5:
 st.markdown("<div style='margin-bottom: 24px;'></div>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------
-# Main Tabs: 1 to 5
+# Main Tabs: 1 to 7
 # ---------------------------------------------------------
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "📈 Trends (Dual-Axis & Velocity)",
     "🎯 Impact (Accrual & Landmark Papers)",
     "🌐 Collaboration (Global & Industry)",
     "🏆 Quality & Benchmarks (Q1-Q4 & Radar)",
-    "👥 Authors (Faculty Dossier & Print)"
+    "👥 Authors (Faculty Dossier & Print)",
+    "📡 Live Feed (Search & Export)",
+    "🤖 AI Copilot (Natural Language Assistant)"
 ])
 
 # =========================================================
@@ -1240,6 +1244,218 @@ with tab5:
                 )
     else:
         st.info("No faculty author data available in the selected filter subset.")
+
+
+# =========================================================
+# TAB 6: 📡 LIVE FEED (SEARCH & EXPORT)
+# =========================================================
+with tab6:
+    st.markdown(
+        styles.render_section_header(
+            "Live Research Feed & Bibliographic Repository",
+            "Full-text searchable publication records with live DOI navigation, Excel and BibTeX data exports",
+            "RESEARCH ARCHIVE",
+            "📡",
+            current_theme
+        ),
+        unsafe_allow_html=True
+    )
+
+    feed_df = filtered_df.copy()
+
+    # Feed Search and Limits
+    search_c1, search_c2 = st.columns([8, 4])
+    with search_c1:
+        feed_search = st.text_input(
+            "🔍 Search repository by title, author, journal, or department:",
+            placeholder="Type any keyword e.g. Synthesis, Sharma, Biotechnology, 2025...",
+            key="live_feed_search_input"
+        )
+    with search_c2:
+        row_limit = st.selectbox(
+            "Display Rows Limit:",
+            options=[50, 100, 250, 500, "All Records"],
+            index=1,
+            key="feed_row_limit"
+        )
+
+    # Filter by search string
+    if feed_search and not feed_df.empty:
+        fs = feed_search.strip().lower()
+        feed_df = feed_df[
+            feed_df["title"].str.lower().str.contains(fs, na=False) |
+            feed_df["authors"].str.lower().str.contains(fs, na=False) |
+            feed_df["primary_author"].str.lower().str.contains(fs, na=False) |
+            feed_df["journal"].str.lower().str.contains(fs, na=False) |
+            feed_df["department"].str.lower().str.contains(fs, na=False)
+        ].reset_index(drop=True)
+
+    # Apply row limits
+    if row_limit != "All Records" and not feed_df.empty:
+        display_feed_df = feed_df.head(int(row_limit)).copy()
+    else:
+        display_feed_df = feed_df.copy()
+
+    # Action Buttons: Export Excel (.xlsx) and Export BibTeX (.bib)
+    btn_col1, btn_col2, count_col = st.columns([3, 3, 6])
+
+    with btn_col1:
+        # Export Excel (.xlsx) via openpyxl
+        excel_buffer = io.BytesIO()
+        export_excel_df = feed_df.copy()
+        if "Paper Link" not in export_excel_df.columns:
+            export_excel_df["DOI_URL"] = export_excel_df.apply(make_doi_link, axis=1)
+
+        with pd.ExcelWriter(excel_buffer, engine="openpyxl") as writer:
+            export_excel_df.to_excel(writer, index=False, sheet_name="MU Scopus Publications")
+        excel_data = excel_buffer.getvalue()
+
+        st.download_button(
+            label="📊 Export Excel (.xlsx)",
+            data=excel_data,
+            file_name="mumbai_university_scopus_publications.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            use_container_width=True
+        )
+
+    with btn_col2:
+        # Export BibTeX (.bib)
+        bib_feed_data = dp.export_to_bibtex(feed_df)
+        st.download_button(
+            label="📑 Export BibTeX (.bib)",
+            data=bib_feed_data,
+            file_name="mumbai_university_scopus_feed.bib",
+            mime="text/plain",
+            use_container_width=True
+        )
+
+    with count_col:
+        st.markdown(f"""
+        <div style="text-align: right; padding-top: 8px; font-size: 0.85rem; color: {'#94A3B8' if is_dark else '#475569'};">
+            Displaying <strong>{len(display_feed_df):,}</strong> of <strong>{len(feed_df):,}</strong> filtered documents
+            (Total Repository: {len(raw_df):,})
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<div style='margin-bottom: 12px;'></div>", unsafe_allow_html=True)
+
+    if not display_feed_df.empty:
+        display_feed_df["#"] = range(1, len(display_feed_df) + 1)
+        display_feed_df["Paper Link"] = display_feed_df.apply(make_doi_link, axis=1)
+
+        feed_cols = ["#", "title", "primary_author", "department", "journal", "year", "citations", "quartile", "Paper Link"]
+        st.dataframe(
+            display_feed_df[feed_cols].rename(columns={
+                "title": "Publication Title",
+                "primary_author": "Lead Author",
+                "department": "Department",
+                "journal": "Journal / Source",
+                "year": "Year",
+                "citations": "Citations",
+                "quartile": "Tier"
+            }),
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "#": st.column_config.NumberColumn("#", width="small"),
+                "Publication Title": st.column_config.TextColumn("Publication Title", width="large"),
+                "Lead Author": st.column_config.TextColumn("Lead Author", width="medium"),
+                "Department": st.column_config.TextColumn("Academic Department", width="medium"),
+                "Journal / Source": st.column_config.TextColumn("Journal / Source", width="medium"),
+                "Year": st.column_config.NumberColumn("Year", format="%d", width="small"),
+                "Citations": st.column_config.NumberColumn("Citations", format="%d 🔥", width="small"),
+                "Tier": st.column_config.TextColumn("Tier", width="small"),
+                "Paper Link": st.column_config.LinkColumn("DOI ↗", display_text="Open ↗", width="small")
+            }
+        )
+    else:
+        st.info("No publication records found matching your search query.")
+
+
+# =========================================================
+# TAB 7: 🤖 AI COPILOT (NATURAL LANGUAGE ASSISTANT)
+# =========================================================
+with tab7:
+    st.markdown(
+        styles.render_section_header(
+            "MU Scopus Intelligence AI Copilot",
+            "Fast built-in Python/Pandas natural language research assistant with zero external API dependencies",
+            "IN-BUILT AI",
+            "🤖",
+            current_theme
+        ),
+        unsafe_allow_html=True
+    )
+
+    # Initialize Copilot chat messages in session state
+    if "copilot_messages" not in st.session_state or not st.session_state["copilot_messages"]:
+        st.session_state["copilot_messages"] = [
+            {
+                "role": "assistant",
+                "content": f"""👋 **Welcome to the University of Mumbai Research AI Copilot!**
+
+I am your built-in research analytics assistant powered directly by the local Scopus bibliometric intelligence engine (**{len(filtered_df):,} active publications**).
+
+**Try our instant prompt chips below or ask any question:**
+* 📊 **Executive Dossier**: Get a high-level institutional summary with NIRF/NAAC accreditation benchmarks.
+* 🏛️ **Dept Rankings**: View complete departmental volume, citations, and CPP comparisons.
+* 🏆 **Q1 Quality Analysis**: Inspect journal quartile distribution, top Q1 venues, and citation velocity.
+* 👥 **Top Authors**: Review faculty research leadership rankings and estimated $h$-indices.
+
+Feel free to ask questions like:
+* *"Which department has the highest Citations Per Paper (CPP)?"*
+* *"Tell me about research output in the Department of Chemistry."*
+* *"What is our international collaboration rate and top partner nations?"*
+* *"Who is our most cited researcher?"*
+"""
+            }
+        ]
+
+    # Prompt Chips Row
+    st.markdown("##### ⚡ Quick Prompt Chips")
+    chip_c1, chip_c2, chip_c3, chip_c4, clear_c = st.columns([2.5, 2.5, 2.5, 2.5, 2])
+
+    triggered_prompt = None
+    with chip_c1:
+        if st.button("📊 Executive Dossier", use_container_width=True, key="chip_dossier"):
+            triggered_prompt = "📊 Executive Dossier"
+    with chip_c2:
+        if st.button("🏛️ Dept Rankings", use_container_width=True, key="chip_dept"):
+            triggered_prompt = "🏛️ Dept Rankings"
+    with chip_c3:
+        if st.button("🏆 Q1 Quality Analysis", use_container_width=True, key="chip_q1"):
+            triggered_prompt = "🏆 Q1 Quality Analysis"
+    with chip_c4:
+        if st.button("👥 Top Authors", use_container_width=True, key="chip_authors"):
+            triggered_prompt = "👥 Top Authors"
+    with clear_c:
+        if st.button("🗑️ Clear Chat", use_container_width=True, key="clear_chat_btn"):
+            st.session_state["copilot_messages"] = []
+            st.rerun()
+
+    st.markdown("---")
+
+    # Render Conversation History
+    for msg in st.session_state["copilot_messages"]:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+
+    # Chat Input Box
+    user_query = st.chat_input("Ask AI Copilot about University of Mumbai research...")
+
+    active_query = triggered_prompt or user_query
+
+    if active_query:
+        # Append User Message
+        st.session_state["copilot_messages"].append({"role": "user", "content": active_query})
+
+        # Generate Fast Offline Response via ai_copilot.py
+        with st.spinner("Analyzing bibliometric dataset..."):
+            response_text = ai_copilot.generate_ai_response(active_query, filtered_df)
+
+        # Append Assistant Response
+        st.session_state["copilot_messages"].append({"role": "assistant", "content": response_text})
+        st.rerun()
 
 
 # ---------------------------------------------------------
